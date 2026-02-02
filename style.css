@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+h1 {
+    text-align: center;
+    padding: 5px;
+}
 #container {
     width: 1200px;
     height: 600px;
@@ -43,4 +47,8 @@
 
 .tick line {
     stroke: #c0c0bb;
+}
+
+.mark {
+    color: #c0c0bb;
 }
