@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+    width: 1200px;
+    height: 600px;
+    border: 1px black solid;
+    margin: 0 auto;
+}
+
+#graph {
+    border: 1px black solid;
+    margin: 5px;
+    margin-right: 2.5px;
+    float: left;
+}
+
+#controller {
+    width: 283px;
+    height: 590px;
+    border: 1px black solid;
+    padding-top: 10px;
+    margin: 5px;
+    margin-left: 2.5px;
+    float: left;
+}
+
+.roll {
+    display: flex;
+    margin-bottom: 10px;
+}
+.roll p:first-child {
+    width: 100px;
+    text-align: center;
+    font-size: 17px;
+}
+.weight {
+    margin-left: 15px;
+}
+
+.tick line {
+    stroke: #c0c0bb;
+}
