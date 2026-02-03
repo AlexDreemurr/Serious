@@ -4,45 +4,62 @@
     margin: 0;
 }
 
+body {
+    padding: 10px;
+}
+
 h1 {
     text-align: center;
     padding: 5px;
+    font-size: clamp(16px, 5vw, 24px);
 }
+
 #container {
-    width: 1200px;
-    height: 600px;
-    border: 1px black solid;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px black solid;
 }
 
 #graph {
     border: 1px black solid;
     margin: 5px;
-    margin-right: 2.5px;
-    float: left;
+    width: calc(100% - 10px);
+    height: auto;
 }
 
 #controller {
-    width: 283px;
-    height: 590px;
+    width: calc(100% - 10px);
     border: 1px black solid;
-    padding-top: 10px;
+    padding: 10px;
     margin: 5px;
-    margin-left: 2.5px;
-    float: left;
 }
 
 .roll {
     display: flex;
+    align-items: center;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 }
+
 .roll p:first-child {
     width: 100px;
+    min-width: 80px;
     text-align: center;
-    font-size: 17px;
+    font-size: clamp(14px, 3vw, 17px);
 }
+
+.roll input[type='range'] {
+    flex: 1;
+    min-width: 100px;
+    max-width: 200px;
+}
+
 .weight {
     margin-left: 15px;
+    min-width: 40px;
 }
 
 .tick line {
@@ -51,4 +68,55 @@ h1 {
 
 .mark {
     color: #c0c0bb;
+    font-size: clamp(10px, 2.5vw, 14px);
+    padding: 5px;
+    text-align: center;
+}
+
+/* 桌面端样式 - 左右排布 */
+@media (min-width: 900px) {
+    #container {
+        flex-wrap: nowrap;
+        height: auto;
+    }
+    
+    #graph {
+        width: calc(75% - 10px);
+        flex-shrink: 0;
+    }
+    
+    #controller {
+        width: calc(25% - 10px);
+        flex-shrink: 0;
+    }
+}
+
+/* 手机端样式 - 上下排布 */
+@media (max-width: 899px) {
+    #container {
+        flex-direction: column;
+    }
+    
+    #graph {
+        width: calc(100% - 10px);
+        aspect-ratio: 16 / 10;
+    }
+    
+    #controller {
+        width: calc(100% - 10px);
+    }
+    
+    .roll {
+        justify-content: space-between;
+    }
+    
+    .roll p:first-child {
+        width: 25%;
+        min-width: 60px;
+    }
+    
+    .roll input[type='range'] {
+        flex: 1;
+        margin: 0 10px;
+    }
 }
