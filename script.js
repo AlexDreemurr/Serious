@@ -28,7 +28,7 @@ const calculateDimensions = () => {
         // 手机端：图表占满容器宽度
         width = containerWidth - 12;
         height = Math.max(300, Math.min(width * 0.7, 450));
-        margin = { top: 20, right: 15, bottom: 30, left: 40 };
+        margin = { top: 20, right: 15, bottom: 70, left: 30 };
     } else {
         // 桌面端：图表占75%宽度
         width = (containerWidth - 12) * 0.75 - 10;
